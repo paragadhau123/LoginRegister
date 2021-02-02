@@ -1,0 +1,56 @@
+.example-card {
+    width:auto;
+    height: auto;
+  }
+
+  .card{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+  }
+  
+  .name{
+    display: flex;
+    flex-direction: row;
+  
+    font-size: 27px;
+    padding: initial;
+    margin-bottom: 20px
+  }
+  .heading {
+    color: black;
+  }
+
+  .email-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+.email{
+  display: block;
+    width: 350px;
+}
+.password-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: -67px;
+}
+.password{
+    display: block;
+    width: 350px;
+    margin-left: 70px;
+}
+
+  .button-row{
+      margin-left: 60px;
+  }
+  .button{
+    background-color: rgb(84, 140, 243);
+    color: #ffff
+   }
+
+
+
+

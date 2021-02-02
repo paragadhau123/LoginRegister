@@ -1,0 +1,25 @@
+<div class="card">
+    <mat-card class="example-card">
+        <div class="name" >
+            <span class="heading">Log In</span>
+          </div>
+         
+          <div class="email-container">
+            <mat-form-field appearance="outline" class="email">
+              <mat-label>Email Id</mat-label>
+              <input matInput [formControl]="email">
+            </mat-form-field>
+        </div>
+        <div class="password-row">
+            <mat-form-field appearance="outline" class="password">
+                <mat-label>Password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'"  [formControl]="password">
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>            
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <button   mat-flat-button class="button"  routerLink="/register">Create account</button>
+            <button   mat-flat-button class="button" (click)="login()">Log In</button>
+        </div>
+    </mat-card>
+</div>
