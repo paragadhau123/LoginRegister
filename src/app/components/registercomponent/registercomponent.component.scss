@@ -2,19 +2,20 @@
     width:auto;
     padding: auto;
   }
-  .card{
+.card{
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 100vh;
     align-items: center;
+    background-image: url("../../../assets/ozero-lodka-zakat-siluet\ \(1\).jpg");
   }
-  .name {
+.name {
     font-size: 27px;
     padding: initial;
     margin-bottom: 30px
   }
-  .heading {
+.heading {
     color: black;
   }
 .fname{ 
@@ -24,10 +25,6 @@
 width: 225px;
 margin-left: 10px; 
 }
-  .email-container .mat-form-field + .mat-form-field {
-    margin-left: 8px;
-    width: 390px;
-  }
 .email{
   display: block;
 }
