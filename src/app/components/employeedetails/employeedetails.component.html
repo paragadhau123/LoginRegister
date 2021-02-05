@@ -22,7 +22,6 @@
                 <input matInput placeholder=" Name" [formControl]="nName">
                 <mat-error *ngIf="nName.invalid">{{getNickNameErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Gender</mat-label>
                 <input matInput placeholder="Male or Female" [formControl]="gender">
@@ -35,7 +34,6 @@
                 <input matInput placeholder=" Phone Number" [formControl]="phNumber">
                 <mat-error *ngIf="phNumber.invalid">{{getPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Email" [formControl]="email">
@@ -43,27 +41,20 @@
             </mat-form-field>
         </div>
         <div class="nameContainer">
-            <mat-form-field appearance="outline" class="name1">
-                <mat-label>State</mat-label>
-                <input matInput placeholder="eg: State" [formControl]="state">
-                <mat-error *ngIf="state.invalid">{{getStateErrorMessage()}}</mat-error>
-            </mat-form-field>
-
-            <!-- <mat-form-field appearance="fill" class="name1">
+            <mat-form-field appearance="fill" class="name1">
                 <mat-label>Select an State</mat-label>
-                <mat-select disableRipple>
-                    <mat-option value="1">Maharastra</mat-option>
-                    <mat-option value="2">Telangana</mat-option>
-                    <mat-option value="3">Andhra Pradesh</mat-option>
+                <mat-select [(value)]="State" [(ngModel)]="State" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let State of States" [value]="State">
+                        {{ State }}
+                    </mat-option>
                 </mat-select>
-            </mat-form-field> -->
-
-            <mat-form-field appearance="outline" class="name1">
-                <mat-label>City</mat-label>
-                <input matInput placeholder="eg: City" [formControl]="city">
-                <mat-error *ngIf="city.invalid">{{getCityErrorMessage()}}</mat-error>
             </mat-form-field>
-
+            <mat-form-field appearance="fill" class="name1">
+                <mat-label>Select an City</mat-label>
+                <mat-select [(value)]="City" [(ngModel)]="City" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let City of Cities" [value]="City">{{ City }}</mat-option>
+                </mat-select>
+            </mat-form-field>
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>Pin</mat-label>
                 <input matInput placeholder="eg: 711101" [formControl]="pin">
@@ -89,7 +80,6 @@
                 <input matInput placeholder="Fathers Name" [formControl]="fatherName">
                 <mat-error *ngIf="fatherName.invalid">{{getFatherNameErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Mothers Full Name</mat-label>
                 <input matInput placeholder="Mothers Name" [formControl]="motherName">
@@ -102,7 +92,6 @@
                 <input matInput placeholder="Fathers Occupation" [formControl]="fatherOccupation">
                 <mat-error *ngIf="fatherOccupation.invalid">{{getFatherOccupationErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Mothers Occupation</mat-label>
                 <input matInput placeholder=" Mothers Occupation" [formControl]="motherOccupation">
@@ -115,7 +104,6 @@
                 <input matInput placeholder="Fathers Age" [formControl]="fathersAge">
                 <mat-error *ngIf="fathersAge.invalid">{{getFatherAgeErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Mothers Age</mat-label>
                 <input matInput placeholder="Mothers Age" [formControl]="motherAge">
@@ -128,7 +116,6 @@
                 <input matInput placeholder="Enter Fathers Mobile Number" [formControl]="fatherPhNumber">
                 <mat-error *ngIf="fatherPhNumber.invalid">{{getFatherPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Mothers Mobile Number</mat-label>
                 <input matInput placeholder="Enter Mothers Mobile Number" [formControl]="motherPhNumber">
@@ -148,24 +135,42 @@
         <div class="heading1">
             <h1 class="heading"> Educational Details</h1>
         </div>
+
         <div class="nameContainer">
-            <mat-form-field appearance="outline" class="name">
+            <mat-form-field appearance="fill" class="name">
+                <mat-label>Highest Qualification</mat-label>
+                <mat-select [(value)]="HighestQulification" [(ngModel)]="HighestQulification"
+                    [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let HighestQulification of HighestQulifications" [value]="HighestQulification">
+                        {{ HighestQulification }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="name">
+                    <mat-label>Specilization</mat-label>
+                    <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
+                        <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill" class="name">`
+                <mat-label>Specilization</mat-label>
+                <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+        </div>
+        <div class="nameContainer">
+            <mat-form-field appearance="outline" class="name1">
                 <mat-label>10th University</mat-label>
                 <input matInput>
             </mat-form-field>
-
-            <mat-form-field appearance="outline" class="name">
+            <mat-form-field appearance="outline" class="name1">
                 <mat-label>12th University</mat-label>
                 <input matInput>
             </mat-form-field>
-        </div>
-        <div class="nameContainer">
-            <mat-form-field appearance="outline" class="name">
-                <mat-label>Highest Degree</mat-label>
-                <input matInput>
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="name">
+            <mat-form-field appearance="outline" class="name1">
                 <mat-label>Highest Degree University</mat-label>
                 <input matInput>
             </mat-form-field>
@@ -199,8 +204,8 @@
             </mat-form-field>
         </div>
         <div>
-            Are you fresher or experience??If experience then fill the profetional details please
-            <mat-radio-group aria-label="Select an option">
+            Are you fresher or experience??If experience then fill the Professional details please
+            <mat-radio-group aria-label="Select an option" class="radiobuttons">
                 <mat-radio-button value="1">Fresher</mat-radio-button>
                 <mat-radio-button value="2" (click)="professitionalDetailsFalse()">Experience</mat-radio-button>
             </mat-radio-group>
@@ -218,7 +223,6 @@
                 <mat-label>Experience in years</mat-label>
                 <input matInput placeholder="Ex:2 yrs">
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Company Name</mat-label>
                 <input matInput placeholder="Ex:Quixy">
@@ -229,7 +233,6 @@
                 <mat-label>Designation</mat-label>
                 <input matInput placeholder="Ex:Associate Software Engineer">
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Location of Working</mat-label>
                 <input matInput placeholder="Ex:Hyderabad">
@@ -242,23 +245,21 @@
                     <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}</mat-option>
                 </mat-select>
             </mat-form-field>
-
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Package</mat-label>
                 <input matInput placeholder="Ex:4LPA">
             </mat-form-field>
         </div>
         <div class="nameContainer">
-                <mat-form-field appearance="outline" class="name">
-                    <mat-label>Expected Package</mat-label>
-                    <input matInput placeholder="Ex:10LPA">
-                </mat-form-field>
-    
-                <mat-form-field appearance="outline" class="name">
-                    <mat-label>Expected Location of Working</mat-label>
-                    <input matInput placeholder="Ex:Hyderabad">
-                </mat-form-field>
-            </div>
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Expected Package</mat-label>
+                <input matInput placeholder="Ex:10LPA">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Expected Location of Working</mat-label>
+                <input matInput placeholder="Ex:Hyderabad">
+            </mat-form-field>
+        </div>
         <div class="continueButton">
             <button mat-stroked-button color="primary" class="button">Submit Details</button>
         </div>

@@ -94,7 +94,42 @@ export class EmployeedetailsComponent implements OnInit {
     }
     return this.state.invalid ? 'Invalid State' : '';
   }
+  private map = new Map<string, string[]>([
+    ['B-Tech', ['ENTC', 'Instrumentation', 'Mechanical', 'Electrical']],
+    ['MBA', ['Finance', 'Marketing', 'HR']],
+    ['M-TECH', ['CAD', 'CAM', 'Electronics', 'Civil']],
+    ['BBA', ['BBA1', 'BBA2', 'BBA3', 'BBA4']],
+    ['PHD', ['Computer', 'Science', 'Maths', 'History']],
+    ])
+    
+    HighestQulification: any;
+    Stream: any;
+    
+    get HighestQulifications(): string[] {
+    return Array.from(this.map.keys());
+    }
+    
+    get Streams(): string[] | undefined {
+    return this.map.get(this.HighestQulification);
+    }
 
+    private map1 = new Map<string, string[]>([
+      ['Maharastra', ['Pune', 'Mumbai', 'Nagpur', 'Amravati', 'Akola', 'Wardha']],
+      ['Telangana', ['Hyderabad', 'Warangal']],
+      ['Andhra Pradesh', ['Guntur', 'Wijayawad', 'Tirupati', 'Amravati']],
+      ['Goa', ['Panjim', 'Calnguate', 'Bagha']],
+      ])
+      
+      State: any;
+      City: any;
+      
+      get States(): string[] {
+      return Array.from(this.map1.keys());
+      }
+      
+      get Cities(): string[] | undefined {
+      return this.map1.get(this.State);
+      }
   getPincodeErrorMessage() {
     if (this.pin.hasError('required')) {
       return 'Please Enter a Pincode';
@@ -155,22 +190,28 @@ export class EmployeedetailsComponent implements OnInit {
 
   orderSummary = true;
   educationalDetails = true;
-  experienceDetails=true;
+  experienceDetails = true;
+
   languages = new FormControl();
   languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
   ngOnInit(): void {
   }
 
   orderSummaryFalse() {
-   // if (this.fName.valid && this.email.valid && this.lName.valid && this.nName.valid && this.gender.valid && this.phNumber.valid && this.state.valid && this.city.valid && this.pin.valid) {
-      this.orderSummary = false;
-   //}
-  //else{
+    // if (this.fName.valid && this.email.valid && this.lName.valid && this.nName.valid && this.gender.valid && this.phNumber.valid && this.state.valid && this.city.valid && this.pin.valid) {
+    this.orderSummary = false;
+    //}
+    //else{
     //  this._snackBar.open("Enter All Details First", 'Cancle')
-   //}
+    //}
   }
   educationalDetailsFalse() {
-    this.educationalDetails = false;
+   // if (this.motherAge.valid && this.fathersAge.valid && this.motherName.valid && this.fatherName.valid && this.motherOccupation.valid && this.fatherOccupation.valid && this.motherPhNumber.valid && this.fatherPhNumber.valid) {
+      this.educationalDetails = false;
+   // }
+   // else {
+     // this._snackBar.open("Enter All Details First", 'Cancle')
+    //}
   }
   professitionalDetailsFalse() {
     this.experienceDetails = false;
