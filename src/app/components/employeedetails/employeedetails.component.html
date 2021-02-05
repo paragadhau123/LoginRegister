@@ -1,3 +1,4 @@
+<app-toolbar></app-toolbar>
 <div class="card">
     <div class="customerDetails" *ngIf="orderSummary">
         <div class="heading1">
@@ -6,52 +7,63 @@
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder=" Name"   [formControl]="fName">
+                <input matInput placeholder=" Name" [formControl]="fName">
                 <mat-error *ngIf="fName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Phone"   [formControl]="lName">
+                <input matInput placeholder="Phone" [formControl]="lName">
                 <mat-error *ngIf="lName.invalid">{{getLastNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Nick Name</mat-label>
-                <input matInput placeholder=" Name"   [formControl]="nName">
+                <input matInput placeholder=" Name" [formControl]="nName">
                 <mat-error *ngIf="nName.invalid">{{getNickNameErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Gender</mat-label>
-                <input matInput placeholder="Male or Female"   [formControl]="gender">
+                <input matInput placeholder="Male or Female" [formControl]="gender">
                 <mat-error *ngIf="gender.invalid">{{getGenderErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Phone Number</mat-label>
-                <input matInput placeholder=" Phone Number"  [formControl]="phNumber">
+                <input matInput placeholder=" Phone Number" [formControl]="phNumber">
                 <mat-error *ngIf="phNumber.invalid">{{getPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email"   [formControl]="email">
+                <input matInput placeholder="Email" [formControl]="email">
                 <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>State</mat-label>
-                <input matInput placeholder="eg: State"  [formControl]="state">
+                <input matInput placeholder="eg: State" [formControl]="state">
                 <mat-error *ngIf="state.invalid">{{getStateErrorMessage()}}</mat-error>
             </mat-form-field>
+
+            <!-- <mat-form-field appearance="fill" class="name1">
+                <mat-label>Select an State</mat-label>
+                <mat-select disableRipple>
+                    <mat-option value="1">Maharastra</mat-option>
+                    <mat-option value="2">Telangana</mat-option>
+                    <mat-option value="3">Andhra Pradesh</mat-option>
+                </mat-select>
+            </mat-form-field> -->
+
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>City</mat-label>
-                <input matInput placeholder="eg: City"  [formControl]="city">
+                <input matInput placeholder="eg: City" [formControl]="city">
                 <mat-error *ngIf="city.invalid">{{getCityErrorMessage()}}</mat-error>
             </mat-form-field>
+
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>Pin</mat-label>
                 <input matInput placeholder="eg: 711101" [formControl]="pin">
@@ -74,7 +86,7 @@
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Fathers Full Name</mat-label>
-                <input matInput placeholder="Fathers Name"  [formControl]="fatherName">
+                <input matInput placeholder="Fathers Name" [formControl]="fatherName">
                 <mat-error *ngIf="fatherName.invalid">{{getFatherNameErrorMessage()}}</mat-error>
             </mat-form-field>
 
@@ -132,60 +144,121 @@
                 (click)="educationalDetailsFalse()">Continue</button>
         </div>
     </div>
-    <div class="customerDetails" *ngIf="!educationalDetails">
+    <div class="customerDetails" *ngIf="!educationalDetails && experienceDetails ">
         <div class="heading1">
             <h1 class="heading"> Educational Details</h1>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>10th University</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="name">
                 <mat-label>12th University</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Highest Degree</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Highest Degree University</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>10th Percentage</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>12th Percentage</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>Highest Degree Aggregate</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
         </div>
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>10th Passout Year</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>12th Passout Year</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>Highest Degree Passout Year</mat-label>
-                <input matInput >
+                <input matInput>
             </mat-form-field>
         </div>
+        <div>
+            Are you fresher or experience??If experience then fill the profetional details please
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Fresher</mat-radio-button>
+                <mat-radio-button value="2" (click)="professitionalDetailsFalse()">Experience</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="continueButton">
+            <button mat-stroked-button color="primary" class="button">Submit Details</button>
+        </div>
+    </div>
+    <div class="customerDetails" *ngIf="!experienceDetails">
+        <div class="heading1">
+            <h1 class="heading"> Professional Details</h1>
+        </div>
+        <div class="nameContainer">
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Experience in years</mat-label>
+                <input matInput placeholder="Ex:2 yrs">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Company Name</mat-label>
+                <input matInput placeholder="Ex:Quixy">
+            </mat-form-field>
+        </div>
+        <div class="nameContainer">
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Designation</mat-label>
+                <input matInput placeholder="Ex:Associate Software Engineer">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Location of Working</mat-label>
+                <input matInput placeholder="Ex:Hyderabad">
+            </mat-form-field>
+        </div>
+        <div class="nameContainer">
+            <mat-form-field appearance="fill" class="name">
+                <mat-label>Languages you Worked On</mat-label>
+                <mat-select [formControl]="languages" multiple>
+                    <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="name">
+                <mat-label>Package</mat-label>
+                <input matInput placeholder="Ex:4LPA">
+            </mat-form-field>
+        </div>
+        <div class="nameContainer">
+                <mat-form-field appearance="outline" class="name">
+                    <mat-label>Expected Package</mat-label>
+                    <input matInput placeholder="Ex:10LPA">
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline" class="name">
+                    <mat-label>Expected Location of Working</mat-label>
+                    <input matInput placeholder="Ex:Hyderabad">
+                </mat-form-field>
+            </div>
         <div class="continueButton">
             <button mat-stroked-button color="primary" class="button">Submit Details</button>
         </div>

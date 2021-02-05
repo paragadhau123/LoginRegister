@@ -1,0 +1,28 @@
+<mat-toolbar class="toolbar">
+        <span class="title">Employee Form</span>
+        <div Class="searchCard" fxLayout="row">
+            <div fxFlex="10">
+                <button mat-icon-button class="searchButton">
+                <mat-icon class="search" >search</mat-icon>
+                </button>
+            </div>
+            <input Class="searchInput" type="searchbar" placeholder="Search..">
+        </div>
+        <span class="settings"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <img class="img" src="../../../assets/mm.jpg" alt="Avatar">
+          </button>
+        <mat-menu #menu="matMenu" class="menu" >
+            <div class="userDetail" style="right: -100%;">
+                <div fxLayout="row wrap" fxLayoutAlign="center">
+                    <img class="img inner" src="../../../assets/DSC_0106.JPG-01.jpeg" alt="Avatar">
+                </div>
+                <div fxLayoutAlign="center" class="name">Parag Adhau</div>
+                <div fxLayoutAlign="center" class="email">adhauparag@quixy.com</div>
+                <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
+                    <button mat-raised-button color="primary" type="submit "style="
+                    background-color: rgb(10, 7, 7);" (click)="logout() ">Logout</button>
+                </div>
+            </div>
+        </mat-menu>
+        </mat-toolbar>

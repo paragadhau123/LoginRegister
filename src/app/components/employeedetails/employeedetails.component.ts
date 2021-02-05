@@ -155,20 +155,24 @@ export class EmployeedetailsComponent implements OnInit {
 
   orderSummary = true;
   educationalDetails = true;
-
+  experienceDetails=true;
+  languages = new FormControl();
+  languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
   ngOnInit(): void {
   }
 
   orderSummaryFalse() {
-    if (this.fName.valid && this.email.valid && this.lName.valid && this.nName.valid && this.gender.valid && this.phNumber.valid && this.state.valid && this.city.valid && this.pin.valid) {
+   // if (this.fName.valid && this.email.valid && this.lName.valid && this.nName.valid && this.gender.valid && this.phNumber.valid && this.state.valid && this.city.valid && this.pin.valid) {
       this.orderSummary = false;
-    }
-else{
-     this._snackBar.open("Enter All Details First", 'Cancle')
-    }
+   //}
+  //else{
+    //  this._snackBar.open("Enter All Details First", 'Cancle')
+   //}
   }
   educationalDetailsFalse() {
     this.educationalDetails = false;
   }
-
+  professitionalDetailsFalse() {
+    this.experienceDetails = false;
+  }
 }

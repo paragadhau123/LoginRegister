@@ -1,13 +1,10 @@
-.example-card {
-    width:auto;
-    height: auto;
-  }
+
   .card{
     display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-image: url("../../../assets/ozero-lodka-zakat-siluet\ \(1\).jpg");
+    background-image: url("../../../assets/bg1.jpg");
   }
   .name{
     display: flex;
@@ -43,7 +40,7 @@
       margin-left: 60px;
   }
   .button{
-    background-color: rgb(84, 140, 243);
+    background-color:black;
     color: #ffff
    }
 

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LogincomponentComponent } from './components/logincomponent/logincomponent.component';
@@ -17,12 +16,19 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {​​​​​​​​ MatNativeDateModule }​​​​​​​​ from'@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EmployeedetailsComponent } from './components/employeedetails/employeedetails.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
     LogincomponentComponent,
     RegistercomponentComponent,
-    EmployeedetailsComponent
+    EmployeedetailsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,12 @@ import { EmployeedetailsComponent } from './components/employeedetails/employeed
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

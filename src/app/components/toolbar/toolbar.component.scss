@@ -1,0 +1,94 @@
+.toolbar{
+    background: rgb(10, 3, 3);
+    padding: 0%;
+    width: 100%;
+    min-width: 800px;
+    overflow:auto;
+}
+
+.title{
+    color: #ffff;
+    margin-left: 1%;
+}
+.searchCard{
+    width:35%;
+    background: #ffff;
+    margin-left: 25%;
+    border-radius: 5px;
+}
+.logo{
+    margin-left: 18%;
+}
+
+.cart{
+    color: #ffff;
+    font-size: small;
+   
+}
+.cart-logo{
+    margin-top: 10px;
+   
+}
+.img {
+    border-radius: 50%;
+}
+
+.searchInput{
+    outline: none;
+    border: none;
+    font-size: inherit;
+}
+.search{
+    color: rgb(114, 104, 104);
+}
+.inner{
+    height: 80px;
+    width: 80px;
+}
+::ng-deep{
+    .mat-menu-panel .userDetail{
+        min-height: 200px;
+        width: 200px;
+        padding: 8px;
+    }
+    }
+    .settings {
+        flex: 0.9  auto;
+    }
+    .name {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .email {
+        margin-bottom: 10px;
+    }
+.cart-div{
+    margin-left: 4%;
+}
+
+.input-card {
+    width: 47vw;
+    height: 1.8vh;
+    margin-left: 4vw;
+    transition: none !important;
+    box-shadow: none !important;
+    background-color: white;
+}
+.input-feild {
+    width: 44.6vw;
+    margin-top: -42px;
+    padding-left: 35px;
+}
+
+.input-feild input {
+    width: 80%;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: lighter;
+    background-color: white;
+}
+.icon{
+    margin-bottom: 10px;
+}
