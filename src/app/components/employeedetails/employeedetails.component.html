@@ -4,18 +4,20 @@
         <div class="heading1">
             <h1 class="heading">Personal Information</h1>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder=" Name" [formControl]="fName">
+                <input matInput placeholder=" Name" [formControl]="fName" [(ngModel)]="NAME">
                 <mat-error *ngIf="fName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="Phone" [formControl]="lName">
+                <input matInput placeholder="LNAME" [formControl]="lName" [(ngModel)]="LNAME">
                 <mat-error *ngIf="lName.invalid">{{getLastNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Nick Name</mat-label>
@@ -24,22 +26,24 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Gender</mat-label>
-                <input matInput placeholder="Male or Female" [formControl]="gender">
+                <input matInput placeholder="Male or Female" [formControl]="gender" [(ngModel)]="GENDER">
                 <mat-error *ngIf="gender.invalid">{{getGenderErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Phone Number</mat-label>
-                <input matInput placeholder=" Phone Number" [formControl]="phNumber">
+                <input matInput placeholder=" Phone Number" [formControl]="phNumber" [(ngModel)]="PHNUM">
                 <mat-error *ngIf="phNumber.invalid">{{getPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" [formControl]="email">
+                <input matInput placeholder="Email" [formControl]="email" [(ngModel)]="EMAIL">
                 <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="fill" class="name1">
                 <mat-label>Select an State</mat-label>
@@ -61,19 +65,23 @@
                 <mat-error *ngIf="pin.invalid">{{getPincodeErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <mat-form-field class="address">
             <mat-label>Permenant Address</mat-label>
             <textarea matInput placeholder="Street Locality and Area"></textarea>
         </mat-form-field>
+
         <div class="continueButton">
             <button mat-stroked-button color="primary" class="button" *ngIf="orderSummary"
                 (click)="orderSummaryFalse()">Continue</button>
         </div>
     </div>
+
     <div class="customerDetails" *ngIf="!orderSummary && educationalDetails">
         <div class="heading1">
             <h1 class="heading"> Family Information</h1>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Fathers Full Name</mat-label>
@@ -86,6 +94,7 @@
                 <mat-error *ngIf="motherName.invalid">{{getMotherNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Fathers Occupation</mat-label>
@@ -98,6 +107,7 @@
                 <mat-error *ngIf="motherOccupation.invalid">{{getMotherOccupationErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Fathers Age</mat-label>
@@ -110,6 +120,7 @@
                 <mat-error *ngIf="motherAge.invalid">{{getMotherAgeErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Fathers Mobile Number</mat-label>
@@ -122,15 +133,21 @@
                 <mat-error *ngIf="motherPhNumber.invalid">{{getMotherPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
+
         <mat-form-field class="address">
             <mat-label>Parents Permenant Address</mat-label>
             <textarea matInput placeholder="Street Locality and Area"></textarea>
         </mat-form-field>
-        <div class="continueButton">
+
+        <div class="continueButton" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-stroked-button color="primary" class="button" *ngIf="!orderSummary"
+                (click)="orderSummaryFalse()">Back</button>
+
             <button mat-stroked-button color="primary" class="button" *ngIf="!orderSummary"
                 (click)="educationalDetailsFalse()">Continue</button>
         </div>
     </div>
+
     <div class="customerDetails" *ngIf="!educationalDetails && experienceDetails ">
         <div class="heading1">
             <h1 class="heading"> Educational Details</h1>
@@ -148,19 +165,13 @@
             </mat-form-field>
 
             <mat-form-field appearance="fill" class="name">
-                    <mat-label>Specilization</mat-label>
-                    <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
-                        <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
-                    </mat-select>
-                </mat-form-field>
-
-            <!-- <mat-form-field appearance="fill" class="name">`
                 <mat-label>Specilization</mat-label>
                 <mat-select [(value)]="Stream" [(ngModel)]="Stream" [ngModelOptions]="{standalone: true}">
                     <mat-option *ngFor="let Stream of Streams" [value]="Stream">{{ Stream }}</mat-option>
                 </mat-select>
-            </mat-form-field> -->
+            </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>10th University</mat-label>
@@ -189,6 +200,7 @@
                 <input matInput>
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name1">
                 <mat-label>10th Passout Year</mat-label>
@@ -203,6 +215,7 @@
                 <input matInput>
             </mat-form-field>
         </div>
+
         <div>
             Are you fresher or experience??If experience then fill the Professional details please
             <mat-radio-group aria-label="Select an option" class="radiobuttons">
@@ -210,14 +223,20 @@
                 <mat-radio-button value="2" (click)="professitionalDetailsFalse()">Experience</mat-radio-button>
             </mat-radio-group>
         </div>
-        <div class="continueButton">
+
+        <div class="continueButton" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-stroked-button color="primary" class="button" *ngIf="!orderSummary"
+                (click)="educationalDetailsFalse()">Back</button>
+
             <button mat-stroked-button color="primary" class="button">Submit Details</button>
         </div>
     </div>
+
     <div class="customerDetails" *ngIf="!experienceDetails">
         <div class="heading1">
             <h1 class="heading"> Professional Details</h1>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Experience in years</mat-label>
@@ -228,6 +247,7 @@
                 <input matInput placeholder="Ex:Quixy">
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Designation</mat-label>
@@ -238,6 +258,7 @@
                 <input matInput placeholder="Ex:Hyderabad">
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="fill" class="name">
                 <mat-label>Languages you Worked On</mat-label>
@@ -250,6 +271,7 @@
                 <input matInput placeholder="Ex:4LPA">
             </mat-form-field>
         </div>
+
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Expected Package</mat-label>
@@ -260,8 +282,12 @@
                 <input matInput placeholder="Ex:Hyderabad">
             </mat-form-field>
         </div>
-        <div class="continueButton">
+
+        <div class="continueButton" fxLayout="row" fxLayoutAlign="space-between center">
+            <button mat-stroked-button color="primary" class="button" *ngIf="!orderSummary"
+                (click)="professitionalDetailsFalse()">Back</button>
             <button mat-stroked-button color="primary" class="button">Submit Details</button>
         </div>
+
     </div>
 </div>

@@ -10,16 +10,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EmployeedetailsComponent implements OnInit {
 
   fName = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  NAME = "Parag";
 
   lName = new FormControl('', [Validators.required, Validators.minLength(3)]);
-
+  LNAME = "Adhau";
+  
   email = new FormControl('', [Validators.required, Validators.email]);
+  EMAIL = "adhauparag@quixy.com";
 
   nName = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   gender = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  GENDER = "Male";
 
   phNumber = new FormControl('', [Validators.required, Validators.minLength(3)]);
+  PHNUM = "9604445258";
 
   state = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
@@ -94,42 +99,43 @@ export class EmployeedetailsComponent implements OnInit {
     }
     return this.state.invalid ? 'Invalid State' : '';
   }
+
   private map = new Map<string, string[]>([
     ['B-Tech', ['ENTC', 'Instrumentation', 'Mechanical', 'Electrical']],
     ['MBA', ['Finance', 'Marketing', 'HR']],
     ['M-TECH', ['CAD', 'CAM', 'Electronics', 'Civil']],
     ['BBA', ['BBA1', 'BBA2', 'BBA3', 'BBA4']],
     ['PHD', ['Computer', 'Science', 'Maths', 'History']],
-    ])
-    
-    HighestQulification: any;
-    Stream: any;
-    
-    get HighestQulifications(): string[] {
-    return Array.from(this.map.keys());
-    }
-    
-    get Streams(): string[] | undefined {
-    return this.map.get(this.HighestQulification);
-    }
+  ])
 
-    private map1 = new Map<string, string[]>([
-      ['Maharastra', ['Pune', 'Mumbai', 'Nagpur', 'Amravati', 'Akola', 'Wardha']],
-      ['Telangana', ['Hyderabad', 'Warangal']],
-      ['Andhra Pradesh', ['Guntur', 'Wijayawad', 'Tirupati', 'Amravati']],
-      ['Goa', ['Panjim', 'Calnguate', 'Bagha']],
-      ])
-      
-      State: any;
-      City: any;
-      
-      get States(): string[] {
-      return Array.from(this.map1.keys());
-      }
-      
-      get Cities(): string[] | undefined {
-      return this.map1.get(this.State);
-      }
+  HighestQulification: any;
+  Stream: any;
+
+  get HighestQulifications(): string[] {
+    return Array.from(this.map.keys());
+  }
+
+  get Streams(): string[] | undefined {
+    return this.map.get(this.HighestQulification);
+  }
+
+  private map1 = new Map<string, string[]>([
+    ['Maharastra', ['Pune', 'Mumbai', 'Nagpur', 'Amravati', 'Akola', 'Wardha']],
+    ['Telangana', ['Hyderabad', 'Warangal']],
+    ['Andhra Pradesh', ['Guntur', 'Wijayawad', 'Tirupati', 'Amravati']],
+    ['Goa', ['Panjim', 'Calnguate', 'Bagha']],
+  ])
+
+  State: any;
+  City: any;
+
+  get States(): string[] {
+    return Array.from(this.map1.keys());
+  }
+
+  get Cities(): string[] | undefined {
+    return this.map1.get(this.State);
+  }
   getPincodeErrorMessage() {
     if (this.pin.hasError('required')) {
       return 'Please Enter a Pincode';
@@ -191,29 +197,44 @@ export class EmployeedetailsComponent implements OnInit {
   orderSummary = true;
   educationalDetails = true;
   experienceDetails = true;
-
   languages = new FormControl();
   languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
+
   ngOnInit(): void {
   }
 
   orderSummaryFalse() {
     // if (this.fName.valid && this.email.valid && this.lName.valid && this.nName.valid && this.gender.valid && this.phNumber.valid && this.state.valid && this.city.valid && this.pin.valid) {
-    this.orderSummary = false;
+    if (this.orderSummary == true) {
+      this.orderSummary = false;
+    }
+    else {
+      this.orderSummary = true;
+    }
     //}
     //else{
     //  this._snackBar.open("Enter All Details First", 'Cancle')
     //}
   }
   educationalDetailsFalse() {
-   // if (this.motherAge.valid && this.fathersAge.valid && this.motherName.valid && this.fatherName.valid && this.motherOccupation.valid && this.fatherOccupation.valid && this.motherPhNumber.valid && this.fatherPhNumber.valid) {
+    // if (this.motherAge.valid && this.fathersAge.valid && this.motherName.valid && this.fatherName.valid && this.motherOccupation.valid && this.fatherOccupation.valid && this.motherPhNumber.valid && this.fatherPhNumber.valid) {
+    if (this.educationalDetails == true) {
       this.educationalDetails = false;
-   // }
-   // else {
-     // this._snackBar.open("Enter All Details First", 'Cancle')
+    }
+    else {
+      this.educationalDetails = true;
+    }
+    // }
+    // else {
+    // this._snackBar.open("Enter All Details First", 'Cancle')
     //}
   }
   professitionalDetailsFalse() {
-    this.experienceDetails = false;
+    if (this.experienceDetails == true) {
+      this.experienceDetails = false;
+    }
+    else {
+      this.experienceDetails = true;
+    }
   }
 }

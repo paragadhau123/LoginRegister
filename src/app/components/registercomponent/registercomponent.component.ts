@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { FormControl, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarserviceService } from "../../services/snackbarservice/snackbarservice.service";
 @Component({
   selector: 'app-registercomponent',
   templateUrl: './registercomponent.component.html',
@@ -18,7 +18,7 @@ export class RegistercomponentComponent implements OnInit {
   phone = new FormControl('', [Validators.required, Validators.minLength(10)]);
   password = new FormControl('', [Validators.required, Validators.minLength(6)]);
 
-  constructor(private _snackBar: MatSnackBar) {
+  constructor(private snackbar:SnackbarserviceService) {
    
    }
   hide = true;
@@ -35,10 +35,10 @@ export class RegistercomponentComponent implements OnInit {
   
 register(){
   if (this.firstName.valid && this.lastName.valid && this.email.valid && this.city.valid && this.gender.valid && this.state.valid  && this.phone.valid && this.password.valid){
-    this._snackBar.open("Registered successfully.", 'Cancle')
+    this.snackbar.displayMessage("Registered Succesfully");
   }
   else{
-    this._snackBar.open("Enter all details", 'Cancle')
+    this.snackbar.displayMessage("Enter all details");
   }
  }
 }
