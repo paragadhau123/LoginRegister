@@ -1,9 +1,10 @@
 .toolbar{
-    background: rgb(10, 3, 3);
+    background: white(10, 3, 3);
     padding: 0%;
     width: 100%;
     min-width: 800px;
     overflow:auto;
+    border: 1px solid lightgrey;
 }
 
 .title{
@@ -12,9 +13,9 @@
 }
 .searchCard{
     width:35%;
-    background: #ffff;
+    background: whitesmoke;
     margin-left: 25%;
-    border-radius: 5px;
+    border-radius: 5px ;
 }
 .logo{
     margin-left: 18%;

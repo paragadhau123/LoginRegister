@@ -22,13 +22,21 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
+import { GethotelsComponent } from './components/gethotels/gethotels.component';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
     LogincomponentComponent,
     RegistercomponentComponent,
     EmployeedetailsComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    GethotelsComponent,
+    AdmindashboardComponent,
+    UserdashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,9 @@ import {MatRadioModule} from '@angular/material/radio';
     MatMenuModule,
     MatListModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

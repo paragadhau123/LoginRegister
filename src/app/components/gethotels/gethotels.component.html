@@ -1,0 +1,19 @@
+<div class="hotel" fxLayout="row">
+    <div class="hotel-card" fxFlex="column" *ngFor="let value of hotels">
+        <div class="hotel-photo">
+            <div class="image">
+                <img class="hotel-image" src={{value.image}} alt="">
+            </div>
+        </div>
+        <div class="hotel-info">
+            <div class="name">{{value.Name}}</div>
+            <div>{{value.Rating}}</div>
+            <div class="area-name">{{value.area}}</div>
+            <div class="price">Rs.{{value.price}}/Day</div>
+            <div fxLayout="row" fxLayoutAlign="space-between end" class="butt">
+                <button mat-stroked-button color="primary" class="button1">Book Hotel</button>
+                <button mat-stroked-button color="primary" class="button1">Add to favorite</button>
+            </div>
+        </div>
+    </div>
+</div>

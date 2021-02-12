@@ -6,9 +6,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class SnackbarserviceService {
    
   constructor(public snackBar: MatSnackBar) { }
-  displayMessage(message:any) {
+  displayMessage(message:string) {
     this.snackBar.open(message, 'Cancle', {
-      duration: 1000
+      duration: 2000
     })
   }
 }
