@@ -1,9 +1,15 @@
-<div class="table-structure">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" class="table-card">
+<app-toolbar></app-toolbar>
+<div fxLayout="row" fxLayoutAlign="end end">
+    <button mat-raised-button color="primary" (click)="openAddDialog()" style="
+    background-color: rgb(15, 8, 9);" class="button">Add Book</button>
+</div>
 
-        <ng-container matColumnDef="position">
+<div class="table-structure">
+    <table mat-table [dataSource]="data" class="mat-elevation-z8" class="table-card">
+
+        <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef class="table-head"> No. </th>
-            <td mat-cell *matCellDef="let element" class="column-data"> {{element.position}} </td>
+            <td mat-cell *matCellDef="let element" class="column-data"> {{element.id}} </td>
         </ng-container>
 
 

@@ -27,6 +27,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { AddhotelComponent } from './components/addhotel/addhotel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     ToolbarComponent,
     GethotelsComponent,
     AdmindashboardComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    AddhotelComponent
   ],
   imports: [
     BrowserModule,

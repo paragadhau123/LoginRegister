@@ -32,9 +32,9 @@
 }
 
 .button1{
-  font-size: 13px;
+  font-size: 15px;
   color: white;
-  background:  #4285f4;
+  background:  #05070a;
 }
 
 .price{
@@ -58,5 +58,8 @@
   display: flex;
   flex-direction: row;
   justify-content:safe;
-  border-radius: 10px;
+  
+}
+.hotel-image{
+  border-radius: 9px;
 }

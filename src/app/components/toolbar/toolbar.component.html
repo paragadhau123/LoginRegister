@@ -1,42 +1,29 @@
 <mat-toolbar class="toolbar">
-        <button mat-icon-button (click)="drawer.toggle()">
-                <mat-icon>menu</mat-icon>
-              </button>
-        <span class="title"></span>
-        <div Class="searchCard" fxLayout="row">
-            <div fxFlex="10">
-                <button mat-icon-button class="searchButton">
-                <mat-icon class="search" >search</mat-icon>
-                </button>
-            </div>
-            <input Class="searchInput" type="searchbar" placeholder="Search Hotel Here">
+   
+    <span class="title"></span>
+    <div Class="searchCard" fxLayout="row">
+        <div fxFlex="10">
+            <button mat-icon-button class="searchButton">
+                <mat-icon class="search">search</mat-icon>
+            </button>
         </div>
-        <span class="settings"></span>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-            <img class="img" src="../../../assets/mm.jpg" alt="Avatar">
-          </button>
-        <mat-menu #menu="matMenu" class="menu" >
-            <div class="userDetail" style="right: -100%;">
-                <div fxLayout="row wrap" fxLayoutAlign="center">
-                    <img class="img inner" src="../../../assets/DSC_0106.JPG-01.jpeg" alt="Avatar">
-                </div>
-                <div fxLayoutAlign="center" class="name">Parag Adhau</div>
-                <div fxLayoutAlign="center" class="email">adhauparag@quixy.com</div>
-                <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
-                    <button mat-raised-button color="primary" type="submit "style="
-                    background-color: rgb(10, 7, 7);" (click)="logout() ">Logout</button>
-                </div>
+        <input Class="searchInput" type="searchbar" placeholder="Search Hotel Here">
+    </div>
+    <span class="settings"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <img class="img" src="../../../assets/mm.jpg" alt="Avatar">
+    </button>
+    <mat-menu #menu="matMenu" class="menu">
+        <div class="userDetail" style="right: -100%;">
+            <div fxLayout="row wrap" fxLayoutAlign="center">
+                <img class="img inner" src="../../../assets/DSC_0106.JPG-01.jpeg" alt="Avatar">
             </div>
-        </mat-menu>
-        </mat-toolbar> 
-        <mat-drawer #drawer class="sidenav" mode="side" class="slider">
-            <mat-selection-list [multiple]="false ">
-                <mat-list-option class="option">
-                   Trips
-                </mat-list-option>
-                <mat-list-option class="option">Explore</mat-list-option>
-                <mat-list-option class="option">Edit lable</mat-list-option>
-                <mat-list-option class="option">Things to do</mat-list-option>
-                <mat-list-option class="option">Hoiday Rental</mat-list-option>
-            </mat-selection-list>
-        </mat-drawer>
+            <div fxLayoutAlign="center" class="name">Parag Adhau</div>
+            <div fxLayoutAlign="center" class="email">adhauparag@quixy.com</div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-evenly" class="button">
+                <button mat-raised-button color="primary" type="submit " style="
+                    background-color: rgb(10, 7, 7);" (click)="logout() ">Logout</button>
+            </div>
+        </div>
+    </mat-menu>
+</mat-toolbar>

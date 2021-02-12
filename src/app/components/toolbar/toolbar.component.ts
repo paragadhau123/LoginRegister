@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private snackBar: SnackbarserviceService,public route: Router) { }
+  constructor(private snackBar: SnackbarserviceService, public route: Router) { }
 
   ngOnInit(): void {
   }
