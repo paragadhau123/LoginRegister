@@ -11,5 +11,5 @@ export class AddhotelComponent implements OnInit {
 
   ngOnInit(): void {
   }
- 
+
 }

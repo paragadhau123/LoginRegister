@@ -10,18 +10,24 @@ import { SnackbarserviceService } from "../../services/snackbarservice/snackbars
 export class LogincomponentComponent implements OnInit {
   email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required, Validators.minLength(6)]);
-  constructor(public route: Router,private snackbar:SnackbarserviceService) { }
+  constructor(public route: Router, private snackbar: SnackbarserviceService) { }
   hide = true;
 
   ngOnInit(): void {
   }
   login() {
- 
+
     if (this.password.valid && this.email.valid) {
-
-      this.snackbar.displayMessage("Login Succesfully");
-      this.route.navigate(['details'])
-
+      if (this.email.value == "admin@gmail.com") {
+        this.snackbar.displayMessage("Admin Login Succesfully");
+        localStorage.setItem("Token", 'Admin')
+        this.route.navigate(['adminDashboard'])
+      }
+      else {
+        localStorage.setItem("Token", 'User')
+        this.route.navigate(['userDashboard'])
+        this.snackbar.displayMessage("User Login Succesfully");
+      }
     }
     else {
       this.snackbar.displayMessage("Wrong email id or password");

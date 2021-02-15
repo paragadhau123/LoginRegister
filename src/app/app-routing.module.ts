@@ -7,14 +7,15 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { GethotelsComponent } from './components/gethotels/gethotels.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { AuthenticationGuard } from "../app/authguard/authentication.guard";
 const routes: Routes = [
 {path:"login",component:LogincomponentComponent},
 {path:"register",component:RegistercomponentComponent},
 {path:"details",component:EmployeedetailsComponent},
 {path:"toolbar",component:ToolbarComponent},
 {path:"hotels",component:GethotelsComponent},
-{path:"userDashboard",component:UserdashboardComponent},
-{path:"adminDashboard",component:AdmindashboardComponent}
+{path:"userDashboard",component:UserdashboardComponent,canActivate: [AuthenticationGuard]},
+{path:"adminDashboard",component:AdmindashboardComponent,canActivate: [AuthenticationGuard]}
 ];
 
 @NgModule({

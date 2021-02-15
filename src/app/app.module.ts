@@ -12,22 +12,23 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {​​​​​​​​ MatNativeDateModule }​​​​​​​​ from'@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EmployeedetailsComponent } from './components/employeedetails/employeedetails.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 import { GethotelsComponent } from './components/gethotels/gethotels.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { UserdashboardComponent } from './components/userdashboard/userdashboard.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { AddhotelComponent } from './components/addhotel/addhotel.component';
+import { AuthguardserviceService } from "../app/authguard/authguardservice.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { AddhotelComponent } from './components/addhotel/addhotel.component';
     GethotelsComponent,
     AdmindashboardComponent,
     UserdashboardComponent,
-    AddhotelComponent
+    AddhotelComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,9 @@ import { AddhotelComponent } from './components/addhotel/addhotel.component';
     MatTableModule,
     MatSidenavModule
   ],
-  providers: [],
+  providers: [
+    AuthguardserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
