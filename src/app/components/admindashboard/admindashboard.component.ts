@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import HOTELDATA from "../../json/data.json";
 import { AddhotelComponent } from "../../components/addhotel/addhotel.component";
-export interface PeriodicElement {
+import { HttpserviceService } from "../../services/httpservice/httpservice.service";
+
+export interface PRODUCT {
   id: number;
-  Name: string;
+  name: string;
   area: string;
-  Ratings: string;
+  ratings: string;
   price: string;
   image: string;
 }
@@ -17,13 +17,32 @@ export interface PeriodicElement {
   templateUrl: './admindashboard.component.html',
   styleUrls: ['./admindashboard.component.scss']
 })
+
 export class AdmindashboardComponent implements OnInit {
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private http: HttpserviceService) { }
+
+  products: PRODUCT[] = [];
+
   ngOnInit(): void {
+    this.getAllHotels();
   }
-  displayedColumns: string[] = ['id', 'Name', 'area', 'Ratings', 'price', 'image', 'update', 'delete'];
-  data: PeriodicElement[] = HOTELDATA;
+
+  displayedColumns: string[] = ['id', 'name', 'area', 'ratings', 'price', 'image', 'update', 'delete'];
+
   openAddDialog() {
     let dialogRef = this.dialog.open(AddhotelComponent, {});
+  }
+
+  getAllHotels() {
+    this.http.getAllHotels().subscribe((data: PRODUCT[]) => {
+      console.log(data);
+      this.products = data;
+    })
+  }
+
+  deleteHotel(element: any) {
+    this.http.deleteHotel(element.id).subscribe((data) => {
+      this.getAllHotels();
+    });
   }
 }

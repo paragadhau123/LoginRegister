@@ -29,6 +29,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { AddhotelComponent } from './components/addhotel/addhotel.component';
 import { AuthguardserviceService } from "../app/authguard/authguardservice.service";
+import { HttpClientModule } from '@angular/common/http';
+import { SearchPipe } from './pipe/search.pipe';
+import { FooterComponent } from './components/footer/footer.component';
+import { BookingsuccessComponent } from './components/bookingsuccess/bookingsuccess.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,9 @@ import { AuthguardserviceService } from "../app/authguard/authguardservice.servi
     AdmindashboardComponent,
     UserdashboardComponent,
     AddhotelComponent,
+    SearchPipe,
+    FooterComponent,
+    BookingsuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,7 @@ import { AuthguardserviceService } from "../app/authguard/authguardservice.servi
     MatCardModule,
     MatIconModule,
     MatFormFieldModule,
+    HttpClientModule,
     MatInputModule,
     FlexLayoutModule,
     MatButtonModule,

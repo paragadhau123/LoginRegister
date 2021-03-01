@@ -1,12 +1,12 @@
 <mat-toolbar class="toolbar">
-    <span class="title"></span>
+    <span class="title">Book Hotel</span>
     <div Class="searchCard" fxLayout="row">
         <div fxFlex="10">
             <button mat-icon-button class="searchButton">
                 <mat-icon class="search">search</mat-icon>
             </button>
         </div>
-        <input Class="searchInput" type="searchbar" placeholder="Search Hotel Here" >
+        <input Class="searchInput" type="searchbar" placeholder="Search Hotel Here" (input)="bookSearch()" [(ngModel)]="name">
     </div>
     <span class="settings"></span>
     <button mat-icon-button [matMenuTriggerFor]="menu">

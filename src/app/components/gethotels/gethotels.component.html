@@ -1,19 +1,25 @@
 <div class="hotel" fxLayout="row">
-    <div class="hotel-card" fxFlex="column" *ngFor="let data of Data">
+    <div class="hotel-card" fxFlex="column" *ngFor="let data of Data | search: hotelSearch let i=index " (mouseenter)="onHover(i)"
+     (mouseleave)="onHover(-1)" (mouseenter)="showDiscription[i]=true" (mouseleave)="showDiscription[i]=false ">
         <div class="hotel-photo">
             <div class="image">
                 <img class="hotel-image" src={{data.image}} alt="">
             </div>
         </div>
         <div class="hotel-info">
-            <div class="name">{{data.Name}}</div>
-            <div>{{data.Ratings}}</div>
+            <div class="name">{{data.name}}</div>
+            <div>{{data.ratings}}</div>
             <div class="area-name">{{data.area}}</div>
             <div class="price">Rs.{{data.price}}/Day</div>
             <div fxLayout="row" fxLayoutAlign="space-between end" class="butt">
-                <button mat-stroked-button color="primary" class="button1">Book Hotel</button>
-                <button mat-stroked-button color="primary" class="button1">Add to favorite</button>
+                <button mat-stroked-button color="primary" class="button1" routerLink="/userDashboard/bookingSuccess">Book Hotel</button>
+                <button mat-stroked-button color="primary" class="button1"   >Add to favorite</button>
+               
             </div>
         </div>
+        <mat-card class="discriptionCart" *ngIf="showDiscription[i]">
+            <p class="hotelDetailHeader">Hotels Details</p>
+           <p class="hotelDisp">{{data.description}}</p> 
+        </mat-card>
     </div>
 </div>

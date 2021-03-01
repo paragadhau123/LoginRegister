@@ -1,6 +1,7 @@
 import { Component, OnInit,Input, ViewChild } from '@angular/core';
-import { SnackbarserviceService } from "../../services/snackbarservice/snackbarservice.service";
+import { SnackbarserviceService } from "../../services/displaymessage/snackbarservice.service";
 import { Router } from '@angular/router'; 
+import { HttpserviceService } from "../../services/httpservice/httpservice.service";
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -8,16 +9,20 @@ import { Router } from '@angular/router';
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(private snackBar: SnackbarserviceService, public route: Router) { }
+  constructor(private message: SnackbarserviceService, public route: Router,public search:HttpserviceService) { }
+
+  name: any;
 
   ngOnInit(): void {
   }
-  // bookSearch() {
-  //   console.log("Parag" + this.Name);
-  //   this.user.setSearchBookData(this.Name);
-  // }
+ 
   logout() {
-    this.snackBar.displayMessage("Logout Succesfully");
+    this.message.displayMessage("Logout Succesfully");
+    localStorage.removeItem('Token')
     this.route.navigate(['login'])
+  }
+
+  bookSearch() {
+    this.search.setSearchBookData(this.name);
   }
 }

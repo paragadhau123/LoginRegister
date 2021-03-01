@@ -3,8 +3,8 @@
     margin-top: 10px;
     padding-bottom: 16px;
     margin-left: 220px;
-    padding-top: 10px;
-    padding-left: 50px;
+    padding-top: 80px;
+    padding-left: 90px;
   }
   .nameContainer{
     display: flex;
@@ -48,8 +48,8 @@
     width: 100%;
     height: 100vh;
     align-items: center;
-     background-image: url("../../../assets/bg1.jpg");
-     background-size: cover;
+    background-image: url("../../../assets/spot-lights-background-style_23-2148604781.jpg");
+    background-size: cover;
   }
   ::ng-deep .mat-form-field-label {
     color: rgba(12, 1, 1, 0.6)!important; 
@@ -63,8 +63,12 @@ heading1{
     flex-direction: row;
     font-size: 30px;
     padding: initial;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+
 }
 .heading {
     color: black;
+    margin-left: 500px;
+    font-size: 30px;
+    font-weight: 500;
   }

@@ -10,21 +10,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EmployeedetailsComponent implements OnInit {
 
   fName = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  NAME = "Parag";
 
   lName = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  LNAME = "Adhau";
 
   email = new FormControl('', [Validators.required, Validators.email]);
-  EMAIL = "adhauparag@quixy.com";
 
   nName = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
   gender = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  GENDER = "Male";
 
   phNumber = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  PHNUM = "9604445258";
 
   state = new FormControl('', [Validators.required, Validators.minLength(3)]);
 
@@ -54,7 +49,6 @@ export class EmployeedetailsComponent implements OnInit {
     }
     return this.fName.invalid ? 'Invalid First Name' : '';
   }
-
   getEmailErrorMessage() {
     if (this.fName.hasError('required')) {
       return 'Please Enter Email';
@@ -85,36 +79,30 @@ export class EmployeedetailsComponent implements OnInit {
     }
     return this.gender.invalid ? 'Invalid Gender' : '';
   }
-
   getCityErrorMessage() {
     if (this.city.hasError('required')) {
       return 'Please Enter City';
     }
     return this.city.invalid ? 'Invalid City' : '';
   }
-
   getStateErrorMessage() {
     if (this.state.hasError('required')) {
       return 'Please Enter a State';
     }
     return this.state.invalid ? 'Invalid State' : '';
   }
-
-
   getPincodeErrorMessage() {
     if (this.pin.hasError('required')) {
       return 'Please Enter a Pincode';
     }
     return this.pin.invalid ? 'Invalid Pincode' : '';
   }
-
   getFatherNameErrorMessage() {
     if (this.fatherName.hasError('required')) {
       return 'Please Enter a  Fathers Name';
     }
     return this.fatherName.invalid ? 'Invalid Phone Number' : '';
   }
-
   getMotherNameErrorMessage() {
     if (this.motherName.hasError('required')) {
       return 'Please Enter a Mothers Name ';
@@ -167,6 +155,7 @@ export class EmployeedetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   private map = new Map<string, string[]>([
     ['B-Tech', ['ENTC', 'Instrumentation', 'Mechanical', 'Electrical']],
     ['MBA', ['Finance', 'Marketing', 'HR']],

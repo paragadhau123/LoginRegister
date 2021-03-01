@@ -3,35 +3,39 @@
         <div class="image">
             <img class="hotel-image" alt="">
         </div>
-        <div class="file"> <input type="file" class="input-file"></div>
+        <div class= "file"> <input type="file" class="input-file" (change)="showPreviewImage($event)"></div>
         <div fxLayout="row" class="second-row">
             <mat-form-field appearance="outline" class="hotel">
                 <mat-label>Hotel Name</mat-label>
-                <input matInput>
+                <input matInput [formControl]="name">
+                <mat-error *ngIf="name.invalid">{{getHotelNameErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="area">
                 <mat-label>Area</mat-label>
-                <input matInput>
+                <input matInput [formControl]="area">
+                <mat-error *ngIf="area.invalid">{{getAreaNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div fxLayout="row">
             <mat-form-field appearance="outline" class="description1">
-                <mat-label>Description</mat-label>
-                <input matInput>
+                <mat-label>Ratings</mat-label>
+                <input matInput [formControl]="ratings">
+                <mat-error *ngIf="ratings.invalid">{{getRatingErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
         <div fxLayout="row">
             <mat-form-field appearance="outline" class="price1">
                 <mat-label>Price</mat-label>
-                <input matInput>
+                <input matInput [formControl]="price">
+                <mat-error *ngIf="price.invalid">{{getPriceErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="quantity1">
                 <mat-label>Exact Location</mat-label>
-                <input matInput>
+                <input matInput >
             </mat-form-field>
         </div>
     </div>
     <div>
-        <button mat-raised-button class="button">Add Hotel</button>
+        <button mat-raised-button class="button" (click)="addBook()">Add Hotel</button>
     </div>
 </div>

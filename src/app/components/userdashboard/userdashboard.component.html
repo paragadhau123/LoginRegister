@@ -4,22 +4,33 @@
         <button mat-icon-button (click)="drawer.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        <mat-drawer #drawer class="sidenav" mode="side" class="slider">
-            <mat-selection-list [multiple]="false ">
+        <span class="nav ">
+            <button mat-icon-button>
+              <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() " >flight</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">public</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon class="material-icons-outlined " (mouseenter)="drawer.toggle() ">camera_alt</mat-icon>
+            </button>
+          </span>
+            
+        <mat-drawer #drawer class="sidenav" mode="side" class="slider" >
+            <mat-selection-list [multiple]="false">
                 <mat-list-option class="option">
                     Trips
                 </mat-list-option>
-                <mat-list-option class="option">Explore</mat-list-option>
-                <mat-list-option class="option">Edit lable</mat-list-option>
-                <mat-list-option class="option">Things to do</mat-list-option>
-                <mat-list-option class="option">Hoiday Rental</mat-list-option>
+                <mat-list-option class="option"(mouseleave)="drawer.toggle() ">Explore</mat-list-option>
+                <mat-list-option class="option"(mouseleave)="drawer.toggle() ">Things to do</mat-list-option>
+                <mat-list-option class="option"(mouseleave)="drawer.toggle()">About Us</mat-list-option>
             </mat-selection-list>
         </mat-drawer>
     </div>
     <div fxFlex="column" fxFlex="90%" class="content " fxLayout="column wrap" fxLayoutGap="35px grid">
-        <div class="fields">
-            <mat-form-field class="example-form-field" appearance="fill">
-                <mat-label>CheckIn Time</mat-label>
+        <!-- <div class="fields">
+            <mat-form-field class="example-form-field" appearance="outline">
+                <mat-label>CheckIn-CheckOut</mat-label>
                 <mat-date-range-input [formGroup]="campaignOne" [rangePicker]="campaignOnePicker"
                     [comparisonStart]="campaignTwo.value.start" [comparisonEnd]="campaignTwo.value.end">
                     <input matStartDate placeholder="Start date" formControlName="start">
@@ -33,7 +44,16 @@
                 <input matInput>
                 <mat-icon matSuffix>fmd_good</mat-icon>
             </mat-form-field>
-        </div>
-        <app-gethotels></app-gethotels>
+
+            <mat-form-field appearance="outline" class="location">
+                <mat-label>Sort by Price</mat-label>
+                <mat-select>
+                    <mat-option value="option1">High To Low</mat-option>
+                    <mat-option value="option2">Low To High</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div> -->
+        <router-outlet></router-outlet>
     </div>
+
 </div>

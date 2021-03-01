@@ -1,0 +1,40 @@
+{
+  "Product": [
+    {
+      "id": 1,
+      "name": "Trident Hotel",
+      "ratings": "4.8",
+      "area": "Madhapur",
+      "price": "1000",
+      "image": "../../../../../assets/hotel6.webp",
+      "description": "About Trident Hotels Trident Hotels falls under the aegis of The Oberoi Group. The Oberoi Group has presence in seven countries under the luxury 'Oberoi' and five-star 'Trident' brand. Founded in 1934, it operates 32 hotels, Nile Cruisers and a Motor Vessel in the backwaters of Kerala. The Group is also engaged in flight catering, airport restaurants."
+    },
+    {
+      "id": 2,
+      "name": "Jubilee Ridge",
+      "ratings": "5",
+      "area": "Hitech City",
+      "price": "2000",
+      "image": "../../../../../assets/hotel7.webp",
+      "description": "Welcome to Jubilee Ridge, your Hyderabad “home away from home.” Jubilee Ridge aims to make your visit as relaxing and enjoyable as possible, which is why so many guests continue to come back year after year."
+    },
+    {
+      "id": 3,
+      "name": "Taj Hotel",
+      "ratings": "3.2",
+      "area": "Jubilee Hills",
+      "price": "3000",
+      "image": "../../../../../assets/hotel3.webp",
+      "description": "The Taj Chia Kutir Resort and Spa is as exotic as it sounds. Luxury at its barefoot best. After all it is a sybaritic resort located right in the middle of the perma-cultural, Makaibari Tea Estate founded in 1859 in Kurseong, Darjeeling."
+    },
+    {
+      "id": 4,
+      "name": "Novotel Hyderbad",
+      "ratings": "2",
+      "area": "Banjara Hills",
+      "price": "2500",
+      "image": "../../../../../assets/hotel4.webp",
+      "description": "The word essay derives from the French infinitive essayer,  or . In English essay first meant or , and this is still an alternative meaning. The Frenchman Michel de Montaigne (1533–1592) was the first author to describe his work as essays; he used the term to characterize these as  to put his thoughts into writing"
+    }
+  ]
+}

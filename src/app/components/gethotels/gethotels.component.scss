@@ -63,3 +63,28 @@
 .hotel-image{
   border-radius: 9px;
 }
+.hotel-card:hover {
+  box-shadow: 8px 4px 8px 4px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  ;
+}
+.discriptionCart{
+  display: flex;
+  flex-wrap: wrap;
+ height: 250px;
+ position:relative;
+  bottom: 118%;
+  left: 101%;
+ width: 250px;
+ z-index: 1;
+}
+
+.hotelDisp{
+  color: rgb(14, 11, 11);
+  font-size: small;
+}
+
+.hotelDetailHeader{
+  font-size: medium;
+  font-weight: bold;
+  margin-top: 10px;
+}

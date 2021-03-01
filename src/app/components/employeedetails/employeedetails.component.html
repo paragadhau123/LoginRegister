@@ -1,4 +1,3 @@
-<app-toolbar></app-toolbar>
 <div class="card">
     <div class="customerDetails" *ngIf="orderSummary">
 
@@ -9,12 +8,12 @@
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>First Name</mat-label>
-                <input matInput placeholder=" Name" [formControl]="fName" [(ngModel)]="NAME">
+                <input matInput placeholder=" Name" [formControl]="fName">
                 <mat-error *ngIf="fName.invalid">{{getFirstNameErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Last Name</mat-label>
-                <input matInput placeholder="LNAME" [formControl]="lName" [(ngModel)]="LNAME">
+                <input matInput placeholder="LNAME" [formControl]="lName">
                 <mat-error *ngIf="lName.invalid">{{getLastNameErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
@@ -27,7 +26,7 @@
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Gender</mat-label>
-                <input matInput placeholder="Male or Female" [formControl]="gender" [(ngModel)]="GENDER">
+                <input matInput placeholder="Male or Female" [formControl]="gender">
                 <mat-error *ngIf="gender.invalid">{{getGenderErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
@@ -35,12 +34,12 @@
         <div class="nameContainer">
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Phone Number</mat-label>
-                <input matInput placeholder=" Phone Number" [formControl]="phNumber" [(ngModel)]="PHNUM">
+                <input matInput placeholder=" Phone Number" [formControl]="phNumber">
                 <mat-error *ngIf="phNumber.invalid">{{getPhoneErrorMessage()}}</mat-error>
             </mat-form-field>
             <mat-form-field appearance="outline" class="name">
                 <mat-label>Email</mat-label>
-                <input matInput placeholder="Email" [formControl]="email" [(ngModel)]="EMAIL">
+                <input matInput placeholder="Email" [formControl]="email">
                 <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
             </mat-form-field>
         </div>
@@ -287,8 +286,7 @@
         <div class="continueButton" fxLayout="row" fxLayoutAlign="space-between center">
             <button mat-stroked-button color="primary" class="button" *ngIf="!orderSummary"
                 (click)="professitionalDetailsFalse()">Back</button>
-            <button mat-stroked-button color="primary" class="button">Submit Details</button>
+            <button mat-stroked-button color="primary" class="button" routerLink="/login">Submit Details</button>
         </div>
-
     </div>
 </div>
